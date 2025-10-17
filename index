@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>📘 Итоговый тест A2 — Minecraft Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --card: rgba(255,255,255,0.92);
+    --accent: #39d353;
+    --accent2: #2ea043;
+    --text: #0f172a;
+    --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --radius: 18px;
+  }
+  html, body { margin:0; height:100%; font-family:'Nunito',system-ui,Segoe UI,Arial; color:var(--text);
+    background:#000 url('https://cdn.minecraftrating.ru/storage/servers/122447/b1b9fbd77879723_big.jpg') center/cover fixed no-repeat; }
+  .overlay { position:fixed; inset:0; background: radial-gradient(60% 60% at 50% 15%, rgba(0,0,0,.35), rgba(0,0,0,.8)); pointer-events:none; }
+  .container { position:relative; z-index:1; padding:32px; max-width:1100px; margin:0 auto; }
+  .title { display:flex; align-items:center; gap:16px; margin:0 0 20px; color:#fff; }
+  .badge { background:var(--accent); color:#04210a; padding:8px 12px; border-radius:10px; font-weight:800; box-shadow:var(--shadow); }
+  h1 { font-family:'Press Start 2P',monospace; font-size:clamp(18px,3.2vw,34px); margin:0; text-shadow:0 4px 0 #000; }
+  .card { background:var(--card); backdrop-filter: blur(4px); border-radius:var(--radius); border:4px solid #222; box-shadow:var(--shadow); margin:18px 0 28px; padding:18px; }
+  .section-header { display:flex; align-items:center; gap:10px; }
+  .section-header .cube{width:18px;height:18px;background:var(--accent);box-shadow:3px 3px 0 #063;}
+  h2 { font-family:'Press Start 2P',monospace; font-size:clamp(14px,2vw,22px); margin:0 0 12px; }
+  .subtitle{font-weight:800;margin:8px 0 12px}
+  .grid-2{display:grid;gap:16px;grid-template-columns:1fr} @media(min-width:860px){.grid-2{grid-template-columns:1fr 1fr}}
+  .question{margin:10px 0 14px;padding:10px 12px;background:rgba(0,0,0,.03);border-left:6px solid var(--accent);border-radius:10px}
+  .question label{display:block;font-weight:800;margin-bottom:6px}
+  input[type=text],textarea,select{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:10px;border:2px solid #111;background:#fff;font-size:16px;font-weight:700}
+  textarea{min-height:120px}
+  .drag-area{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .dropzone,.draggable{background:#fff;border:2px solid #111;border-radius:10px;padding:10px;font-weight:800}
+  .pool{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .draggable{cursor:grab;text-align:center;box-shadow:var(--shadow)}
+  .dropzone{background:#f6f7fb;display:flex;align-items:center;gap:10px;justify-content:space-between}
+  .slot-answer{flex:1;min-height:36px;display:flex;align-items:center;justify-content:center;border:2px dashed #94a3b8;border-radius:8px;padding:6px;min-width:150px}
+  .btn{appearance:none;border:0;border-radius:12px;padding:10px 16px;font-weight:800;cursor:pointer;background:linear-gradient(180deg,var(--accent),var(--accent2));color:#061a0b;box-shadow:var(--shadow);margin:8px 8px 0 0}
+  .btn.secondary{background:#fff;border:2px dashed var(--accent2)}
+  .result{margin-top:10px;font-weight:800}
+  .correct{background:#ecfdf5;border-color:#16a34a!important}
+  .wrong{background:#fff1f2;border-color:#dc2626!important}
+  .scorebar{height:14px;background:#e2e8f0;border-radius:999px;overflow:hidden}
+  .scorebar>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#39d353,#7ee787);transition:width .6s}
+  .reading-text{font-size:clamp(18px,2.1vw,22px);line-height:1.6;background:#fff;border:3px solid #222;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+</style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="container">
+  <div class="title"><div class="badge">A2</div><h1>Итоговый тест — Vocabulary • Grammar • Reading • Writing</h1></div>
+
+  <!-- =================== PART 1 — VOCABULARY =================== -->
+  <div class="card" id="vocabulary">
+    <div class="section-header"><div class="cube"></div><h2>Part 1 — Vocabulary</h2></div>
+
+    <!-- 1) Match verbs to meanings (8) -->
+    <div class="subtitle">1) Match the verbs with their meanings. Соедини слово и его значение.</div>
+    <div class="drag-area">
+      <div>
+        <div class="dropzone" data-answer="tidy"><span> a) tidy</span><div class="slot-answer"></div></div>
+        <div class="dropzone" data-answer="repair"><span> b) repair</span><div class="slot-answer"></div></div>
+        <div class="dropzone" data-answer="fetch"><span> c) fetch</span><div class="slot-answer"></div></div>
+        <div class="dropzone" data-answer="look after"><span> d) look after</span><div class="slot-answer"></div></div>
+      </div>
+      <div>
+        <div class="dropzone" data-answer="send"><span> e) send</span><div class="slot-answer"></div></div>
+        <div class="dropzone" data-answer="make sure"><span> f) make sure</span><div class="slot-answer"></div></div>
+        <div class="dropzone" data-answer="meet"><span> g) meet</span><div class="slot-answer"></div></div>
+        <div class="dropzone" data-answer="cook"><span> h) cook</span><div class="slot-answer"></div></div>
+      </div>
+    </div>
+    <div class="pool" id="pool">
+      <div class="draggable" draggable="true" data-key="tidy">to clean or put things in order</div>
+      <div class="draggable" draggable="true" data-key="repair">to fix something broken</div>
+      <div class="draggable" draggable="true" data-key="fetch">to go and bring something back</div>
+      <div class="draggable" draggable="true" data-key="look after">to take care of someone</div>
+      <div class="draggable" draggable="true" data-key="send">to make something go to another place</div>
+      <div class="draggable" draggable="true" data-key="make sure">to check that everything is correct</div>
+      <div class="draggable" draggable="true" data-key="meet">to see and talk to someone by arrangement</div>
+      <div class="draggable" draggable="true" data-key="cook">to prepare food</div>
+    </div>
+
+    <!-- 2) Write the time (8) -->
+    <div class="subtitle" style="margin-top:18px">2) Write the time in words. Напиши время словами.</div>
+    <div class="grid-2" id="timeWords">
+      <div class="question"><label>a) 2:05</label><input type="text" data-time="2:05" placeholder="write here..."></div>
+      <div class="question"><label>b) 2:10</label><input type="text" data-time="2:10"></div>
+      <div class="question"><label>c) 2:15</label><input type="text" data-time="2:15"></div>
+      <div class="question"><label>d) 2:20</label><input type="text" data-time="2:20"></div>
+      <div class="question"><label>e) 2:25</label><input type="text" data-time="2:25"></div>
+      <div class="question"><label>f) 2:30</label><input type="text" data-time="2:30"></div>
+      <div class="question"><label>g) 2:35</label><input type="text" data-time="2:35"></div>
+      <div class="question"><label>h) 2:45</label><input type="text" data-time="2:45"></div>
+    </div>
+
+    <!-- 3) Time zones Q&A (8) -->
+    <div class="subtitle" style="margin-top:18px">3) Time zones. Answer the questions.</div>
+    <div class="grid-2" id="tzQA">
+      <div class="question"><label>a) What is the Greenwich Meridian?</label>
+        <select data-a="0° longitude"><option value="">choose…</option><option>0° longitude</option><option>90° latitude</option><option>The Equator</option></select></div>
+      <div class="question"><label>b) Where does it pass through?</label>
+        <select data-a="Greenwich, London"><option value="">choose…</option><option>Greenwich, London</option><option>New York</option><option>Paris</option></select></div>
+      <div class="question"><label>c) If you live east of London, is it…</label>
+        <select data-a="later"><option value="">choose…</option><option>earlier</option><option>later</option></select></div>
+      <div class="question"><label>d) If you live west of London, is it…</label>
+        <select data-a="earlier"><option value="">choose…</option><option>earlier</option><option>later</option></select></div>
+      <div class="question"><label>e) How many time zones can the USA have?</label>
+        <select data-a="more than one"><option value="">choose…</option><option>one</option><option>more than one</option><option>none</option></select></div>
+      <div class="question"><label>f) Lines of latitude show…</label>
+        <select data-a="north/south"><option value="">choose…</option><option>east/west</option><option>north/south</option><option>time of day</option></select></div>
+      <div class="question"><label>g) Lines of longitude show…</label>
+        <select data-a="east/west"><option value="">choose…</option><option>north/south</option><option>east/west</option><option>weather</option></select></div>
+      <div class="question"><label>h) Why is it night in one place and day in another?</label>
+        <select data-a="Earth rotates and has time zones"><option value="">choose…</option><option>Earth rotates and has time zones</option><option>Because of seasons</option><option>Because planes fly fast</option></select></div>
+    </div>
+
+    <button class="btn" onclick="checkVocab()">Check Part 1</button>
+    <button class="btn secondary" onclick="resetSection('vocabulary')">Reset</button>
+    <div class="result" id="vocabResult"></div>
+    <div class="scorebar"><span id="vocabBar"></span></div>
+  </div>
+
+  <!-- =================== PART 2 — GRAMMAR =================== -->
+  <div class="card" id="grammar">
+    <div class="section-header"><div class="cube"></div><h2>Part 2 — Grammar</h2></div>
+
+    <!-- 1) Past Continuous (8) -->
+    <div class="subtitle">1) Past Continuous — complete the sentences.</div>
+    <div class="grid-2" id="pc1">
+      <div class="question"><label>a) The children ______ (have) breakfast at 7:30 yesterday.</label><input type="text" data-a="were having"></div>
+      <div class="question"><label>b) ______ (it / rain) last night?</label><input type="text" data-a="was it raining"></div>
+      <div class="question"><label>c) Mum ______ (work) yesterday afternoon.</label><input type="text" data-a="was working"></div>
+      <div class="question"><label>d) We ______ (not play) football at 4 o’clock.</label><input type="text" data-a="were not playing|weren't playing"></div>
+      <div class="question"><label>e) My sister ______ (watch) TV while I was studying.</label><input type="text" data-a="was watching"></div>
+      <div class="question"><label>f) He ______ (drive) slowly when I saw him.</label><input type="text" data-a="was driving"></div>
+      <div class="question"><label>g) While I ______ (clean) my bike, my mum came out.</label><input type="text" data-a="was cleaning"></div>
+      <div class="question"><label>h) What ______ you ______ (do) at 8 yesterday evening?</label><input type="text" data-a="were you doing"></div>
+    </div>
+
+    <!-- 2) Present Perfect (8) -->
+    <div class="subtitle" style="margin-top:14px">2) Present Perfect — ever / never / just / already / yet.</div>
+    <div class="grid-2" id="pp1">
+      <div class="question"><label>a) Have you ______ eaten sushi?</label><input type="text" data-a="ever"></div>
+      <div class="question"><label>b) I have ______ met a famous person.</label><input type="text" data-a="never"></div>
+      <div class="question"><label>c) She has ______ finished her homework.</label><input type="text" data-a="already"></div>
+      <div class="question"><label>d) They haven’t done their project ______.</label><input type="text" data-a="yet"></div>
+      <div class="question"><label>e) We have ______ gone scuba diving.</label><input type="text" data-a="just"></div>
+      <div class="question"><label>f) Has your sister ______ won a prize?</label><input type="text" data-a="ever"></div>
+      <div class="question"><label>g) He has ______ packed his suitcase.</label><input type="text" data-a="already|just"></div>
+      <div class="question"><label>h) Have they ______ seen this film?</label><input type="text" data-a="ever"></div>
+    </div>
+
+    <!-- 3) For / Since (8) -->
+    <div class="subtitle" style="margin-top:14px">3) Present Perfect with for / since — circle the correct word.</div>
+    <div class="grid-2" id="ppfs">
+      <div class="question"><label>a) I haven’t read a good book</label>
+        <select data-a="for"><option value="">for / since</option><option>for</option><option>since</option></select> <small>two months.</small></div>
+      <div class="question"><label>b) She has lived here</label>
+        <select data-a="since"><option value="">for / since</option><option>for</option><option>since</option></select> <small>she was a little girl.</small></div>
+      <div class="question"><label>c) We have been at school</label>
+        <select data-a="since"><option value="">for / since</option><option>for</option><option>since</option></select> <small>9 o’clock.</small></div>
+      <div class="question"><label>d) I’ve had this bag</label>
+        <select data-a="for"><option value="">for / since</option><option>for</option><option>since</option></select> <small>a few weeks.</small></div>
+      <div class="question"><label>e) He hasn’t played football</label>
+        <select data-a="for"><option value="">for / since</option><option>for</option><option>since</option></select> <small>a long time.</small></div>
+      <div class="question"><label>f) They have been on holiday</label>
+        <select data-a="since"><option value="">for / since</option><option>for</option><option>since</option></select> <small>the end of July.</small></div>
+      <div class="question"><label>g) I’ve known my best friend</label>
+        <select data-a="for"><option value="">for / since</option><option>for</option><option>since</option></select> <small>5 years.</small></div>
+      <div class="question"><label>h) We’ve lived here</label>
+        <select data-a="since"><option value="">for / since</option><option>for</option><option>since</option></select> <small>2010.</small></div>
+    </div>
+
+    <!-- 4) PS vs PC (8) -->
+    <div class="subtitle" style="margin-top:14px">4) Past Simple vs Past Continuous — choose the correct form.</div>
+    <div class="grid-2" id="psvpc">
+      <div class="question"><label>a) The children were having breakfast when the postman …</label>
+        <select data-a="arrived"><option value="">choose…</option><option>arrived</option><option>was arriving</option></select></div>
+      <div class="question"><label>b) While we …, we heard a wild animal.</label>
+        <select data-a="were camping"><option value="">choose…</option><option>camped</option><option>were camping</option></select></div>
+      <div class="question"><label>c) Martha was walking home when she … David.</label>
+        <select data-a="met"><option value="">choose…</option><option>met</option><option>was meeting</option></select></div>
+      <div class="question"><label>d) We were doing homework when our parents … home.</label>
+        <select data-a="came"><option value="">choose…</option><option>came</option><option>were coming</option></select></div>
+      <div class="question"><label>e) While I was playing tennis, I …</label>
+        <select data-a="fell"><option value="">choose…</option><option>fell</option><option>was falling</option></select></div>
+      <div class="question"><label>f) He … when I phoned.</label>
+        <select data-a="was sleeping"><option value="">choose…</option><option>slept</option><option>was sleeping</option></select></div>
+      <div class="question"><label>g) I was reading when my friend …</label>
+        <select data-a="came"><option value="">choose…</option><option>came</option><option>was coming</option></select></div>
+      <div class="question"><label>h) She was cooking when the electricity …</label>
+        <select data-a="went off"><option value="">choose…</option><option>went off</option><option>was going off</option></select></div>
+    </div>
+
+    <button class="btn" onclick="checkGrammar()">Check Part 2</button>
+    <button class="btn secondary" onclick="resetSection('grammar')">Reset</button>
+    <div class="result" id="grammarResult"></div>
+    <div class="scorebar"><span id="grammarBar"></span></div>
+  </div>
+
+  <!-- =================== PART 3 — READING =================== -->
+  <div class="card" id="reading">
+    <div class="section-header"><div class="cube"></div><h2>Part 3 — Reading</h2></div>
+
+    <div class="reading-text">
+      <p><strong>Text:</strong> Last summer, my family and I went to the USA. It was my first trip outside Europe. I was very excited. The flight was long, and when we arrived in New York, I saw something strange. The time on my watch was very different from the time in the airport. In London it was almost midnight, but in New York it was only seven o’clock in the evening.</p>
+      <p>My dad told me about time zones. London uses Greenwich Mean Time, but New York is five hours behind. That is why it was still evening there when it was night in London. I had already read about time zones at school, but it was the first time I really saw it.</p>
+      <p>During the holiday, we visited museums, went to Central Park, and took a short trip to Washington, D.C. We have visited many places in Europe before, but this trip was special. I have never travelled so far, and I have never felt so tired after a flight! Still, I loved the USA. I have already decided that I want to go back one day, maybe to California.</p>
+    </div>
+
+    <div class="subtitle">1) Choose the best title</div>
+    <div class="question"><select id="readingTitle"><option value="">choose…</option><option value="a">My First Trip to the USA</option><option value="b">Learning English in London</option><option value="c">The History of Time Zones</option></select></div>
+
+    <div class="subtitle">2) True / False (8 statements)</div>
+    <div class="grid-2" id="tf">
+      <div class="question"><label>a) The family went to the USA last summer.</label><select data-a="T"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+      <div class="question"><label>b) The flight to the USA was short.</label><select data-a="F"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+      <div class="question"><label>c) In London it was night, but in New York it was evening.</label><select data-a="T"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+      <div class="question"><label>d) New York is five hours ahead of London.</label><select data-a="F"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+      <div class="question"><label>e) The writer had read about time zones before.</label><select data-a="T"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+      <div class="question"><label>f) They visited museums and Central Park.</label><select data-a="T"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+      <div class="question"><label>g) The writer has travelled outside Europe many times.</label><select data-a="F"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+      <div class="question"><label>h) The writer wants to go back to the USA.</label><select data-a="T"><option value="">choose…</option><option>T</option><option>F</option></select></div>
+    </div>
+
+    <div class="subtitle">3) Answer the questions</div>
+    <div class="grid-2" id="rq">
+      <div class="question"><label>a) What time was it in London when they arrived in New York?</label><input type="text" data-keys="midnight|almost midnight"></div>
+      <div class="question"><label>b) What time was it in New York when they arrived?</label><input type="text" data-keys="seven oclock|7 oclock|seven|7"></div>
+      <div class="question"><label>c) What did they do during the holiday?</label><input type="text" data-keys="visited museums|central park|washington|took a trip"></div>
+      <div class="question"><label>d) Where does the writer want to go in the future?</label><input type="text" data-keys="california|go back|return"></div>
+    </div>
+
+    <button class="btn" onclick="checkReading()">Check Part 3</button>
+    <button class="btn secondary" onclick="resetSection('reading')">Reset</button>
+    <div class="result" id="readingResult"></div>
+    <div class="scorebar"><span id="readingBar"></span></div>
+  </div>
+
+  <!-- =================== PART 4 — WRITING =================== -->
+  <div class="card" id="writing">
+    <div class="section-header"><div class="cube"></div><h2>Part 4 — Writing</h2></div>
+    <div class="question">
+      <label>Write 20–30 words about your own travel or a place you want to visit. Answer: <em>Where did you go and what did you do?</em></label>
+      <textarea id="writingText" placeholder="Write 20–30 words…"></textarea>
+      <div class="result" id="writingResult"></div>
+    </div>
+    <button class="btn" onclick="checkWriting()">Check Word Count</button>
+    <button class="btn secondary" onclick="resetWriting()">Clear</button>
+  </div>
+
+  <!-- TOTAL -->
+  <div class="card" id="overall">
+    <div class="section-header"><div class="cube"></div><h2>Total Score</h2></div>
+    <button class="btn" onclick="showTotal()">Calculate Total</button>
+    <div class="result" id="totalResult"></div>
+    <div class="scorebar"><span id="totalBar"></span></div>
+  </div>
+</div>
+
+<script>
+// ===== Helpers
+const norm = s => (s||'').toString().trim().toLowerCase()
+  .replace(/\s+/g,' ') // collapse spaces
+  .replace(/[!.,;:()\[\]"']/g,'');
+
+function pop(el){ if(!el) return; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); }
+
+// ===== Shuffle all select options (keep placeholder first)
+function shuffleOptions(){
+  document.querySelectorAll('select').forEach(sel=>{
+    if(sel.options && sel.options.length>1){
+      const opts=[...sel.options];
+      const first=opts.shift();
+      for(let i=opts.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [opts[i],opts[j]]=[opts[j],opts[i]]; }
+      sel.innerHTML=''; sel.appendChild(first); opts.forEach(o=>sel.appendChild(o)); sel.selectedIndex=0; sel.value='';
+    }
+  });
+}
+
+// ===== Drag & Drop (Vocab Match)
+let dragged=null;
+function initDrag(){
+  document.querySelectorAll('.draggable').forEach(d=>{
+    d.addEventListener('dragstart',()=>{dragged=d; setTimeout(()=>d.style.opacity=.5,0)});
+    d.addEventListener('dragend',()=>{dragged=null; d.style.opacity=1});
+  });
+  document.querySelectorAll('.slot-answer').forEach(slot=>{
+    ['dragover','dragenter'].forEach(ev=>slot.addEventListener(ev,e=>{ e.preventDefault(); slot.style.background='#eef6ff'; }));
+    ['dragleave','drop'].forEach(ev=>slot.addEventListener(ev,e=>{ slot.style.background=''; }));
+    slot.addEventListener('drop',e=>{
+      e.preventDefault(); if(!dragged) return;
+      if(slot.firstElementChild){ document.getElementById('pool').appendChild(slot.firstElementChild); }
+      slot.innerHTML=''; slot.appendChild(dragged);
+    });
+  });
+}
+function shufflePool(){
+  const pool=document.getElementById('pool'); if(!pool) return; const items=[...pool.children];
+  for(let i=items.length-1;i>=0;i--){ const j=Math.floor(Math.random()*(i+1)); pool.appendChild(items[j]); }
+}
+
+// ===== CHECKERS
+function checkVocab(){
+  let correct=0,total=0;
+  // matching (8)
+  document.querySelectorAll('#vocabulary .dropzone').forEach(z=>{
+    total++;
+    const need=z.dataset.answer; const have=z.querySelector('.slot-answer .draggable');
+    if(have && have.dataset.key===need){ z.classList.add('correct'); z.classList.remove('wrong'); correct++; }
+    else { z.classList.add('wrong'); z.classList.remove('correct'); }
+  });
+  // time in words (8)
+  const timeMap={
+    '2:05':['five past two'],
+    '2:10':['ten past two'],
+    '2:15':['quarter past two','a quarter past two'],
+    '2:20':['twenty past two'],
+    '2:25':['twenty five past two','twenty-five past two'],
+    '2:30':['half past two'],
+    '2:35':['twenty five to three','twenty-five to three'],
+    '2:45':['quarter to three','a quarter to three']
+  };
+  document.querySelectorAll('#timeWords input[data-time]').forEach(inp=>{
+    total++;
+    const key=inp.dataset.time; const ans=norm(inp.value);
+    const ok=(timeMap[key]||[]).some(v=>norm(v)===ans);
+    if(ok){ correct++; inp.classList.add('correct'); inp.classList.remove('wrong'); }
+    else { inp.classList.add('wrong'); inp.classList.remove('correct'); }
+  });
+  // time zones selects (8)
+  document.querySelectorAll('#tzQA select').forEach(sel=>{
+    total++;
+    if(norm(sel.value)===norm(sel.dataset.a)){ correct++; sel.classList.add('correct'); sel.classList.remove('wrong'); }
+    else { sel.classList.add('wrong'); sel.classList.remove('correct'); }
+  });
+  const pc=Math.round(100*correct/total);
+  document.getElementById('vocabResult').textContent=`Score: ${correct} / ${total}`;
+  document.getElementById('vocabBar').style.width=pc+'%';
+}
+
+function checkGrammar(){
+  let correct=0,total=0;
+  // text inputs in pc1 + pp1
+  document.querySelectorAll('#grammar input[type="text"]').forEach(inp=>{
+    total++;
+    const sols=(inp.dataset.a||'').split('|').map(norm); const v=norm(inp.value);
+    if(sols.includes(v)){ correct++; inp.classList.add('correct'); inp.classList.remove('wrong'); }
+    else { inp.classList.add('wrong'); inp.classList.remove('correct'); }
+  });
+  // selects in ppfs + psvpc
+  document.querySelectorAll('#grammar select').forEach(sel=>{
+    total++;
+    const a=norm(sel.dataset.a||''); const v=norm(sel.value||'');
+    if(a && a===v){ correct++; sel.classList.add('correct'); sel.classList.remove('wrong'); }
+    else { sel.classList.add('wrong'); sel.classList.remove('correct'); }
+  });
+  const pc=Math.round(100*correct/total);
+  document.getElementById('grammarResult').textContent=`Score: ${correct} / ${total}`;
+  document.getElementById('grammarBar').style.width=pc+'%';
+}
+
+function checkReading(){
+  let correct=0,total=0;
+  // title (correct is option a)
+  total++; const t=document.getElementById('readingTitle');
+  if(t && t.value==='a'){ correct++; t.classList.add('correct'); t.classList.remove('wrong'); }
+  else { t.classList.add('wrong'); t.classList.remove('correct'); }
+  // T/F (8)
+  document.querySelectorAll('#tf select').forEach(sel=>{ total++; if(norm(sel.value)===norm(sel.dataset.a)){ correct++; sel.classList.add('correct'); } else { sel.classList.add('wrong'); sel.classList.remove('correct'); } });
+  // short answers (4) — keyword includes
+  document.querySelectorAll('#rq input').forEach(inp=>{
+    total++;
+    const keys=(inp.dataset.keys||'').split('|').map(norm); const val=norm(inp.value);
+    const ok=keys.some(k=>val.includes(k));
+    if(ok){ correct++; inp.classList.add('correct'); inp.classList.remove('wrong'); }
+    else { inp.classList.add('wrong'); inp.classList.remove('correct'); }
+  });
+  const pc=Math.round(100*correct/total);
+  document.getElementById('readingResult').textContent=`Score: ${correct} / ${total}`;
+  document.getElementById('readingBar').style.width=pc+'%';
+}
+
+function checkWriting(){
+  const txt=document.getElementById('writingText').value.trim();
+  const words=txt.split(/\s+/).filter(Boolean); let msg=`Words: ${words.length}. `;
+  if(words.length<20) msg+='Please write at least 20 words.';
+  else if(words.length>30) msg+='Please write no more than 30 words.';
+  else msg+='Great length!';
+  document.getElementById('writingResult').textContent=msg;
+}
+
+function showTotal(){
+  function parseScore(id){ const el=document.getElementById(id); const m=(el.textContent||'').match(/Score: (\d+) \/ (\d+)/); return m?[+m[1],+m[2]]:[0,0]; }
+  const s1=parseScore('vocabResult'); const s2=parseScore('grammarResult'); const s3=parseScore('readingResult');
+  const got=s1[0]+s2[0]+s3[0]; const tot=s1[1]+s2[1]+s3[1];
+  if(tot===0){ document.getElementById('totalResult').textContent='Please check sections first.'; return; }
+  const pc=Math.round(100*got/tot); document.getElementById('totalResult').textContent=`Total: ${got} / ${tot} (${pc}%)`; document.getElementById('totalBar').style.width=pc+'%';
+}
+
+function resetSection(id){
+  const box=document.getElementById(id); if(!box) return;
+  box.querySelectorAll('input[type="text"]').forEach(i=>{i.value=''; i.classList.remove('correct','wrong')});
+  box.querySelectorAll('select').forEach(s=>{s.selectedIndex=0; s.classList.remove('correct','wrong')});
+  if(id==='vocabulary'){
+    const pool=document.getElementById('pool'); box.querySelectorAll('.slot-answer .draggable').forEach(d=>pool.appendChild(d));
+    box.querySelectorAll('.dropzone').forEach(z=>z.classList.remove('correct','wrong'));
+  }
+  const res=box.querySelector('.result'); if(res) res.textContent=''; const bar=box.querySelector('.scorebar span'); if(bar) bar.style.width='0%';
+}
+function resetWriting(){ document.getElementById('writingText').value=''; document.getElementById('writingResult').textContent=''; }
+
+// ===== INIT
+window.addEventListener('DOMContentLoaded',()=>{
+  initDrag(); shufflePool(); shuffleOptions();
+  // ensure nothing is prefilled
+  document.querySelectorAll('select').forEach(s=>{s.selectedIndex=0; s.value=''});
+  document.querySelectorAll('input[type="text"]').forEach(i=>{i.value=''});
+});
+</script>
+</body>
+</html>
